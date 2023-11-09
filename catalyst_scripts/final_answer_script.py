@@ -17,14 +17,14 @@ paraview.simple._DisableFirstRenderCameraReset()
 renderView1 = CreateView('RenderView')
 renderView1.ViewSize = [1860, 1494]
 renderView1.InteractionMode = 'Selection'
-renderView1.AxesGrid = 'Grid Axes 3D Actor'
+#renderView1.AxesGrid = 'Grid Axes 3D Actor'
 renderView1.CenterOfRotation = [34.5, 32.45, 27.95]
-renderView1.StereoType = 'Crystal Eyes'
+#renderView1.StereoType = 'Crystal Eyes'
 renderView1.CameraPosition = [34.5, 32.45, 197.0838838131772]
 renderView1.CameraFocalPoint = [34.5, 32.45, 27.95]
 renderView1.CameraFocalDisk = 1.0
 renderView1.CameraParallelScale = 64.69495872099284
-renderView1.LegendGrid = 'Legend Grid Actor'
+#renderView1.LegendGrid = 'Legend Grid Actor'
 
 SetActiveView(None)
 
@@ -79,9 +79,9 @@ gridDisplay.LookupTable = pressureLUT
 gridDisplay.SelectTCoordArray = 'None'
 gridDisplay.SelectNormalArray = 'None'
 gridDisplay.SelectTangentArray = 'None'
-gridDisplay.OSPRayScaleArray = 'velocity'
-gridDisplay.OSPRayScaleFunction = 'Piecewise Function'
-gridDisplay.Assembly = 'Hierarchy'
+#gridDisplay.OSPRayScaleArray = 'velocity'
+#gridDisplay.OSPRayScaleFunction = 'Piecewise Function'
+#gridDisplay.Assembly = 'Hierarchy'
 gridDisplay.SelectOrientationVectors = 'None'
 gridDisplay.ScaleFactor = 6.9
 gridDisplay.SelectScaleArray = 'None'
@@ -89,11 +89,11 @@ gridDisplay.GlyphType = 'Arrow'
 gridDisplay.GlyphTableIndexArray = 'None'
 gridDisplay.GaussianRadius = 0.34500000000000003
 gridDisplay.SetScaleArray = ['POINTS', 'velocity']
-gridDisplay.ScaleTransferFunction = 'Piecewise Function'
+#gridDisplay.ScaleTransferFunction = 'Piecewise Function'
 gridDisplay.OpacityArray = ['POINTS', 'velocity']
-gridDisplay.OpacityTransferFunction = 'Piecewise Function'
-gridDisplay.DataAxesGrid = 'Grid Axes Representation'
-gridDisplay.PolarAxes = 'Polar Axes Representation'
+#gridDisplay.OpacityTransferFunction = 'Piecewise Function'
+#gridDisplay.DataAxesGrid = 'Grid Axes Representation'
+#gridDisplay.PolarAxes = 'Polar Axes Representation'
 gridDisplay.ScalarOpacityFunction = pressurePWF
 gridDisplay.ScalarOpacityUnitDistance = 1.9662121400426065
 gridDisplay.OpacityArrayName = ['POINTS', 'velocity']
@@ -158,12 +158,12 @@ animationScene1.PlayMode = 'Snap To TimeSteps'
 # create extractor
 pNG1 = CreateExtractor('PNG', renderView1, registrationName='PNG1')
 # trace defaults for the extractor.
-pNG1.Trigger = 'Time Step'
+#pNG1.Trigger = 'Time Step'
 
 # init the 'PNG' selected for 'Writer'
 pNG1.Writer.FileName = 'RenderView1_{timestep:06d}{camera}.png'
 pNG1.Writer.ImageResolution = [1860, 1494]
-pNG1.Writer.Format = 'PNG'
+#pNG1.Writer.Format = 'PNG'
 
 # ----------------------------------------------------------------
 # restore active source
@@ -174,8 +174,8 @@ SetActiveSource(pNG1)
 # Catalyst options
 from paraview import catalyst
 options = catalyst.Options()
-options.GlobalTrigger = 'Time Step'
-options.CatalystLiveTrigger = 'Time Step'
+#options.GlobalTrigger = 'Time Step'
+#options.CatalystLiveTrigger = 'Time Step'
 
 # ------------------------------------------------------------------------------
 if __name__ == '__main__':
